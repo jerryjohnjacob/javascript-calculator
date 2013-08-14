@@ -18,4 +18,7 @@ describe("Calculator", function() {
 	expect(subtract(2,3)).toEqual(-1);
     });
 
+    it("should be able to multiply two numbers", function() {
+	expect(multiply(2,3)).toEqual(6);
+    });
 });

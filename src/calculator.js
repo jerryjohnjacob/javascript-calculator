@@ -21,6 +21,10 @@ function subtract(num1, num2) {
     return num1-num2;
 }
 
+function multiply(num1, num2) {
+    return num1*num2;
+}
+
 function calculate(operation) {
     num1 = parseInt(document.getElementById("num1").value);
     num2 = parseInt(document.getElementById("num2").value);
@@ -32,6 +36,9 @@ function calculate(operation) {
 	    break;
 	case "subtract":
 	    answer = subtract(num1,num2);
+	    break;
+	case "multiply":
+	    answer = multiply(num1,num2);
 	    break;
 	}
     }
