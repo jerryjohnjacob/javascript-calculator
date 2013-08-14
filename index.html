@@ -13,10 +13,12 @@
 
     <div class="col-lg-8">
       <input type="text" placeholder="First operand" id="num1"/>
-      <span>+</span>
+      <span id="operator">+</span>
       <input type="text" placeholder="Second operand" id="num2"/>
-      <input type="button" class="btn" id="compute" onclick="calculate();" value="="/>
       <input type="text" placeholder="Answer" id="answer" disabled/>
+      <br/>
+      <input type="button" class="btn" id="add" value="+" onClick="calculate(this.id)"/>
+      <input type="button" class="btn" id="subtract" value="-" onClick="calculate(this.id)"/>
     </div>
     
     <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine.js"></script>

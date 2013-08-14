@@ -11,7 +11,11 @@ describe("Calculator", function() {
     });
 
     it("should be able to add two numbers", function() {
-	expect(sum(2,3)).toEqual(5);
+	expect(add(2,3)).toEqual(5);
+    });
+
+    it("should be able to subtract two numbers", function() {
+	expect(subtract(2,3)).toEqual(-1);
     });
 
 });

@@ -13,15 +13,27 @@ function validateNumber(num) {
     }
 }
 
-function sum(num1, num2) {
+function add(num1, num2) {
     return num1+num2;
 }
 
-function calculate() {
+function subtract(num1, num2) {
+    return num1-num2;
+}
+
+function calculate(operation) {
     num1 = parseInt(document.getElementById("num1").value);
     num2 = parseInt(document.getElementById("num2").value);
     if(validateNumber(num1) && validateNumber(num2)){
-	var answer = sum(num1,num2);
+	var answer=null;
+	switch(operation) {
+	case "add":
+	    answer = add(num1,num2);
+	    break;
+	case "subtract":
+	    answer = subtract(num1,num2);
+	    break;
+	}
     }
     if(answer){
 	document.getElementById("answer").value=answer;
