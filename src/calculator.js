@@ -1,12 +1,24 @@
 function validateNumber(num) {
+    parsedNum = parseFloat(num);
     try{
-	numRegex = /\d+/;
-	if(numRegex.test(num)){
+	numRegex = /(\d)+(\.\d)?(\d)*/;
+	if(numRegex.test(num) && parsedNum==num){
 	    return true;
 	}
-	else{
-	    throw new Error("Invalid input");
+	throw new Error("Invalid/empty operand");
+    }
+    catch(e){
+	document.getElementById("answer").value=e;
+    }
+}
+
+function validateOperator(op) {
+    try{
+	opRegex = /[\+\-\*\/]/;
+	if(opRegex.test(op)){
+	    return true;
 	}
+	throw new Error("Invalid/empty operator");
     }
     catch(e){
 	document.getElementById("answer").value=e;
@@ -29,27 +41,26 @@ function divide(num1, num2) {
     return num1/num2;
 }
 
-function calculate(operation) {
-    num1 = parseInt(document.getElementById("num1").value);
-    num2 = parseInt(document.getElementById("num2").value);
-    if(validateNumber(num1) && validateNumber(num2)){
-	var answer=null;
-	switch(operation) {
-	case "add":
+function calculate() {
+    num1 = document.getElementById("num1").value;
+    num2 = document.getElementById("num2").value;
+    operator = document.getElementById("operator").value;
+    if(validateNumber(num1) && validateOperator(operator) && validateNumber(num2)){
+	var answer=0;
+	switch(operator) {
+	case "+":
 	    answer = add(num1,num2);
 	    break;
-	case "subtract":
+	case "-":
 	    answer = subtract(num1,num2);
 	    break;
-	case "multiply":
+	case "*":
 	    answer = multiply(num1,num2);
 	    break;
-	case "divide":
+	case "/":
 	    answer = divide(num1,num2);
 	    break;
 	}
-    }
-    if(answer){
 	document.getElementById("answer").value=answer;
     }
 }
