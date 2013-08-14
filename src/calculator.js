@@ -14,7 +14,7 @@ function validateNumber(num) {
 
 function validateOperator(op) {
     try{
-	opRegex = /[\+\-\*\/]/;
+	opRegex = /^[\+\-\*\/]$/;
 	if(opRegex.test(op)){
 	    return true;
 	}

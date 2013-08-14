@@ -16,7 +16,7 @@ describe("Calculator", function() {
 	});
 
 	it("should show errors when given operator", function() {
-	    validateOperator('35a');
+	    validateOperator('/3');
 	    var output = document.getElementById("answer").value;
 	    expect(output).toEqual("Error: Invalid/empty operator");
 	    document.getElementById("answer").value = "";
