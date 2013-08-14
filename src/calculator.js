@@ -25,6 +25,10 @@ function multiply(num1, num2) {
     return num1*num2;
 }
 
+function divide(num1, num2) {
+    return num1/num2;
+}
+
 function calculate(operation) {
     num1 = parseInt(document.getElementById("num1").value);
     num2 = parseInt(document.getElementById("num2").value);
@@ -39,6 +43,9 @@ function calculate(operation) {
 	    break;
 	case "multiply":
 	    answer = multiply(num1,num2);
+	    break;
+	case "divide":
+	    answer = divide(num1,num2);
 	    break;
 	}
     }

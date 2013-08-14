@@ -21,4 +21,8 @@ describe("Calculator", function() {
     it("should be able to multiply two numbers", function() {
 	expect(multiply(2,3)).toEqual(6);
     });
+
+    it("should be able to divide two numbers", function() {
+	expect(divide(3,2)).toEqual(1.5);
+    });
 });
