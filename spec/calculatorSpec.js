@@ -7,6 +7,7 @@ describe("Calculator", function() {
 	validateNumber('a');
 	var output = document.getElementById("answer").value
 	expect(output).toEqual("Error: Invalid input");
+	document.getElementById("answer").value = "";
     });
 
     it("should be able to add two numbers", function() {
