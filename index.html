@@ -15,10 +15,9 @@
     <div class="container">
       <div class="col-lg-4 col-lg-offset-4 calcUnit">
 	<h1 class="text-center">CALCULATOR</h1><br/>
-	  <input type="text" class="form-control" placeholder="First operand" id="num1"/><br/>
-	  <input type="text" class="form-control" maxlength="1"  placeholder="Operator" id="operator"/><br/>
-	  <input type="text" class="form-control"  placeholder="Second operand" id="num2"/><br/>
-	  <input type="button" class="btn btn-primary btn-large form-control" id="compute" value="=" onClick="performCalculation()"/><br/><br/>
+	  <input type="text" class="form-control" placeholder="First operand" oninput="performCalculation()" id="num1"/><br/>
+	  <input type="text" class="form-control" maxlength="1"  placeholder="Operator" oninput="performCalculation()" id="operator"/><br/>
+	  <input type="text" class="form-control"  placeholder="Second operand" oninput="performCalculation()" id="num2"/><br/>
 	  <input type="text" class="form-control"  placeholder="Answer" id="answer" disabled/>
       </div>
     </div>
