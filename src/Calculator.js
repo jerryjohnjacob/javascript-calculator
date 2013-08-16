@@ -1,18 +1,19 @@
 var Calculator = new Object();
 
 Calculator.calculate = function(num1, operator, num2) {
-    switch(operator) {
-    case '+':
-	return num1+num2;
-	break;
-    case '-':
-	return num1-num2;
-	break;
-    case '*':
-	return num1*num2;
-	break;
-    case '/':
-	return num1/num2;
-	break;
-    }
+    var operations = {
+	'+': function() { 
+	    return num1+num2;
+	},
+	'-': function() {
+	    return num1-num2;
+	},
+	'*': function() {
+	    return num1*num2;
+	},
+	'/': function() {
+	    return num1/num2;
+	}
+    };
+    return operations[operator]();
 }

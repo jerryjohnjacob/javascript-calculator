@@ -28,12 +28,13 @@ InputValidator.validateOperator = function(op) {
 }
 
 InputValidator.validateData = function(dataValue, dataType) {
-    switch(dataType) {
-    case("number"):
-	return this.validateNumber(dataValue);
-	break;
-    case("operator"):
-	return this.validateOperator(dataValue);
-	break;
+    var dataTypes = {
+	'number': function() {
+	    return InputValidator.validateNumber(dataValue);
+	},
+	'operator': function() {
+	    return InputValidator.validateOperator(dataValue);
+	}
     };
+    return dataTypes[dataType]();
 }
