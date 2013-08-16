@@ -3,27 +3,27 @@ var InputValidator = new Object();
 InputValidator.validateNumber = function(num) {
     parsedNum = parseFloat(num);
     try{
-	numRegex = /(\d)+(\.\d)?(\d)*/;
-	if(numRegex.test(num) && parsedNum==num){
+	numberRegex = /(\d)+(\.\d)?(\d)*/;
+	if(numberRegex.test(num) && parsedNum==num){
 	    return true;
 	}
 	throw new Error("Invalid/empty operand");
     }
-    catch(e){
-	document.getElementById("answer").value=e;
+    catch(error){
+	document.getElementById("answer").value=error;
     }
 }
 
-InputValidator.validateOperator = function(op) {
+InputValidator.validateOperator = function(operator) {
     try{
-	opRegex = /^[\+\-\*\/]$/;
-	if(opRegex.test(op)){
+	operatorRegex = /^[\+\-\*\/]$/;
+	if(operatorRegex.test(operator)){
 	    return true;
 	}
 	throw new Error("Invalid/empty operator");
     }
-    catch(e){
-	document.getElementById("answer").value=e;
+    catch(error){
+	document.getElementById("answer").value=error;
     }
 }
 
